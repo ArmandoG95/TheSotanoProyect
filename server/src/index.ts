@@ -6,6 +6,10 @@ import bebidaRoutes from './routes/BebidaRoutes';
 import comidaRoutes from './routes/ComidaRoutes';
 import postreRoutes from './routes/PostreRoutes';
 import snackRoutes from './routes/SnackRoutes';
+import clienteRoutes from './routes/ClienteRoutes';
+import ordenRoutes from './routes/OrdenRoutes';
+import tipoPagoRoutes from './routes/TipoPagoRoutes';
+import pagoRoutes from './routes/PagoRoutes';
 
 class Server
 {
@@ -34,6 +38,10 @@ class Server
         this.app.use('/api/Comidas', comidaRoutes)
         this.app.use('/api/Postres', postreRoutes)
         this.app.use('/api/Snacks', snackRoutes)
+        this.app.use('/api/Clientes', clienteRoutes)
+        this.app.use('/api/Ordenes', ordenRoutes)
+        this.app.use('/api/TipoPagos', tipoPagoRoutes)
+        this.app.use('/api/Pagos', pagoRoutes)
     }
 
     star():void

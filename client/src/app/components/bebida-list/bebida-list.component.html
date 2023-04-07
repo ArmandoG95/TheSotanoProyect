@@ -1,0 +1,16 @@
+<h2>BEBIDAS</h2>
+<br>
+<div class="col-md-4" *ngFor="let bebida of bebidas">
+    <div class="card text-center">
+        <div class="card-header text-black d-felx justify-content-between align-items-center" style="background-color: beige; font-size: x-large; font-style: oblique;">
+            {{bebida.bebida}}
+            <a class="btn btn-light">Disponible</a>
+        </div>
+        <img [src]=bebida.fotoBebida class="card img-top">
+        <div class="card-body">
+            <p style="text-align: left;"><b>Precio: </b><i>${{bebida.precioBebida}}</i></p>
+            <p style="text-align: left;"><b>Descripción: </b><i>{{bebida.descBebida}}</i></p>
+            <button type="button" class="btn btn-outline-success">Comprar</button>
+        </div>
+    </div>
+</div>

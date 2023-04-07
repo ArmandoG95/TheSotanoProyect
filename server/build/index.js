@@ -11,6 +11,10 @@ const BebidaRoutes_1 = __importDefault(require("./routes/BebidaRoutes"));
 const ComidaRoutes_1 = __importDefault(require("./routes/ComidaRoutes"));
 const PostreRoutes_1 = __importDefault(require("./routes/PostreRoutes"));
 const SnackRoutes_1 = __importDefault(require("./routes/SnackRoutes"));
+const ClienteRoutes_1 = __importDefault(require("./routes/ClienteRoutes"));
+const OrdenRoutes_1 = __importDefault(require("./routes/OrdenRoutes"));
+const TipoPagoRoutes_1 = __importDefault(require("./routes/TipoPagoRoutes"));
+const PagoRoutes_1 = __importDefault(require("./routes/PagoRoutes"));
 class Server {
     constructor() {
         this.app = (0, express_1.default)();
@@ -30,6 +34,10 @@ class Server {
         this.app.use('/api/Comidas', ComidaRoutes_1.default);
         this.app.use('/api/Postres', PostreRoutes_1.default);
         this.app.use('/api/Snacks', SnackRoutes_1.default);
+        this.app.use('/api/Clientes', ClienteRoutes_1.default);
+        this.app.use('/api/Ordenes', OrdenRoutes_1.default);
+        this.app.use('/api/TipoPagos', TipoPagoRoutes_1.default);
+        this.app.use('/api/Pagos', PagoRoutes_1.default);
     }
     star() {
         this.app.listen(this.app.get('port'), () => { console.log("Servidor en puerto", this.app.get('port')); });

@@ -1,0 +1,16 @@
+<h2>SNACKS</h2>
+<br>
+<div class="col-md-4" *ngFor="let snack of snacks">
+    <div class="card text-center">
+        <div class="card-header text-black d-felx justify-content-between align-items-center" style="background-color: beige; font-size: x-large; font-style: oblique;">
+            {{snack.snack}}
+            <a class="btn btn-light">Disponible</a>
+        </div>
+        <img [src]=snack.fotoSnack class="card img-top">
+        <div class="card-body">
+            <p style="text-align: left;"><b>Precio: </b><i>${{snack.precioSnack}}</i></p>
+            <p style="text-align: left;"><b>Descripción: </b><i>{{snack.descSnack}}</i></p>
+            <button type="button" class="btn btn-outline-success">Comprar</button>
+        </div>
+    </div>
+</div>
