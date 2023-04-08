@@ -4,6 +4,11 @@ import { BebidaListComponent } from './components/bebida-list/bebida-list.compon
 import { ComidaListComponent } from './components/comida-list/comida-list.component';
 import { PostreListComponent } from './components/postre-list/postre-list.component';
 import { SnackListComponent } from './components/snack-list/snack-list.component';
+import { BebidaFormComponent } from './components/bebida-form/bebida-form.component';
+import { OrdenFormComponent } from './components/orden-form/orden-form.component';
+import { ComidaFormComponent } from './components/comida-form/comida-form.component';
+import { PostreFormComponent } from './components/postre-form/postre-form.component';
+import { SnackFormComponent } from './components/snack-form/snack-form.component';
 
 const routes: Routes = [
   {
@@ -14,6 +19,10 @@ const routes: Routes = [
   {
     path:'bebidas',
     component:BebidaListComponent
+  },
+  {
+    path:'bebidas/add',
+    component:BebidaFormComponent
   }
   ,{
     path:'',
@@ -23,6 +32,10 @@ const routes: Routes = [
   {
     path:'comidas',
     component:ComidaListComponent
+  },
+  {
+    path:'comidas/add',
+    component:ComidaFormComponent
   }
   ,{
     path:'',
@@ -32,6 +45,10 @@ const routes: Routes = [
   {
     path:'postres',
     component:PostreListComponent
+  },
+  {
+    path:'postres/add',
+    component:PostreFormComponent
   }
   ,{
     path:'',
@@ -41,6 +58,15 @@ const routes: Routes = [
   {
     path:'snacks',
     component:SnackListComponent
+  },
+  {
+    path:'snacks/add',
+    component:SnackFormComponent
+  }
+  ,{
+    path:'',
+    redirectTo:'/home',
+    pathMatch:'full',
   }
 ];
 

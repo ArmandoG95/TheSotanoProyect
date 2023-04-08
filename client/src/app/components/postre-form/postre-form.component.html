@@ -1,1 +1,34 @@
-<p>postre-form works!</p>
+<h1>AGREGAR POSTRE</h1>
+<br>
+<div class="col-md-4-offset-md-2">
+    <div class="card">
+        <div class="card-body">
+            <form action="">
+                <div class="form-group">
+                    <input type="text" name="postre" [(ngModel)]="postre.postre" placeholder="Nombre Postre" class="form-controll" autofocus>
+                </div>
+                <br>
+                <div>
+                    <input type="number" name="precio" [(ngModel)]="postre.precioPostre" placeholder="Precio Postre" class="form-controll" autofocus>
+                </div>
+                <br>
+                <div>
+                    <input type="text" name="descripcion" [(ngModel)]="postre.descPostre" placeholder="Descripción Postre" class="form-controll" autofocus>
+                </div>
+                <br>
+                <div>
+                    <input type="url" name="foto" [(ngModel)]="postre.fotoPostre" placeholder="Foto de Postre" class="form-controll" autofocus>
+                </div>
+                <br>
+                <button class="btn btn-outline-success" (click)="saveNewPostre()">Agregar</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="col-md-4">
+    <div class="card card-body text-center">
+        <img [src]="postre.fotoPostre" class="card-img-top">
+        <h1>{{postre.idPostre}}:<b>{{postre.postre}}</b></h1>
+        <h2><i>{{postre.precioPostre}} - {{postre.descPostre}}</i></h2>
+    </div>
+</div>

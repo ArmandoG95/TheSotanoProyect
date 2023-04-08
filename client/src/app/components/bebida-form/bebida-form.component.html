@@ -1,1 +1,34 @@
-<p>bebida-form works!</p>
+<h1>AGREGAR BEBIDA</h1>
+<br>
+<div class="col-md-4-offset-md-2">
+    <div class="card">
+        <div class="card-body">
+            <form action="">
+                <div class="form-group">
+                    <input type="text" name="bebida" [(ngModel)]="bebida.bebida" placeholder="Nombre Bebida" class="form-controll" autofocus>
+                </div>
+                <br>
+                <div>
+                    <input type="number" name="precio" [(ngModel)]="bebida.precioBebida" placeholder="Precio Bebida" class="form-controll" autofocus>
+                </div>
+                <br>
+                <div>
+                    <input type="text" name="descripcion" [(ngModel)]="bebida.descBebida" placeholder="Descripción Bebida" class="form-controll" autofocus>
+                </div>
+                <br>
+                <div>
+                    <input type="url" name="foto" [(ngModel)]="bebida.fotoBebida" placeholder="Foto de Bebida" class="form-controll" autofocus>
+                </div>
+                <br>
+                <button class="btn btn-outline-success" (click)="saveNewBebida()">Agregar</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="col-md-4">
+    <div class="card card-body text-center">
+        <img [src]="bebida.fotoBebida" class="card-img-top">
+        <h1>{{bebida.idBebida}}:<b>{{bebida.bebida}}</b></h1>
+        <h2><i>{{bebida.precioBebida}} - {{bebida.descBebida}}</i></h2>
+    </div>
+</div>

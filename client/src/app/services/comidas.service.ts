@@ -17,7 +17,7 @@ export class ComidasService {
   {
     return this.http.get('http://localhost:3000/api/comidas/${id}');
   }
-  saveBebida(comida:Comida)
+  saveComida(comida:Comida)
   {
     return this.http.post('http://localhost:3000/api/comidas',comida);
   }
