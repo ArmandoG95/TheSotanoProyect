@@ -15,7 +15,7 @@ export class BebeidasService {
   }
   getBebida(id:string)
   {
-    return this.http.get('http://localhost:3000/api/bebidas/${id}');
+    return this.http.get('http://localhost:3000/api/bebidas/'+id);
   }
   saveBebida(bebida:Bebida)
   {
@@ -23,10 +23,10 @@ export class BebeidasService {
   }
   deleteBebida(id:string)
   {
-    return this.http.delete('http://localhost:3000/api/bebidas/${id}');
+    return this.http.delete('http://localhost:3000/api/bebidas/'+id);
   }
-  updateBebida(id:string, bebida:Bebida):Observable<Bebida>
+  updateBebida(id:string | number, bebida:Bebida):Observable<Bebida>
   {
-    return this.http.put('http://localhost:3000/api/bebidas/${id}',bebida);
+    return this.http.put('http://localhost:3000/api/bebidas/'+id,bebida);
   }
 }

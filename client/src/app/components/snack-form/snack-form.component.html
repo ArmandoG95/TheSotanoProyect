@@ -20,7 +20,7 @@
                     <input type="url" name="foto" [(ngModel)]="snack.fotoSnack" placeholder="Foto de Snack" class="form-controll" autofocus>
                 </div>
                 <br>
-                <button class="btn btn-outline-success" (click)="saveNewSnack()">Agregar</button>
+                <button class="btn btn-outline-success" (click)="edit?updateSnack():saveNewSnack()">Agregar</button>
             </form>
         </div>
     </div>

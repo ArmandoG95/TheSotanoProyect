@@ -11,9 +11,24 @@ export class SnackListComponent implements OnInit {
   snacks:any=[];
 
   constructor(private snacksService:SnacksService){}ngOnInit(): void {
-    {
-      this.snacksService.getSnacks().subscribe(res => this.snacks=res,
+    this.getSnacks();
+  }
+
+  getSnacks()
+  {
+    this.snacksService.getSnacks().subscribe(
+      res => this.snacks=res,
       err => console.error(err));
-    }
+  }
+
+  deleteSnack(idSnack:string)
+  {
+    this.snacksService.deleteSnack(idSnack).subscribe(
+      res=>{
+        console.log(res);
+        this.getSnacks();
+      },
+      err=>console.error(err)
+    );
   }
 }

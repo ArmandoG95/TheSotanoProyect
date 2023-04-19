@@ -15,7 +15,7 @@ export class SnacksService {
   }
   getSnack(id:string)
   {
-    return this.http.get('http://localhost:3000/api/snacks/${id}');
+    return this.http.get('http://localhost:3000/api/snacks/'+id);
   }
   saveSnack(snack:Snack)
   {
@@ -23,10 +23,10 @@ export class SnacksService {
   }
   deleteSnack(id:string)
   {
-    return this.http.delete('http://localhost:3000/api/snacks/${id}');
+    return this.http.delete('http://localhost:3000/api/snacks/'+id);
   }
-  updateSnack(id:string, snack:Snack):Observable<Snack>
+  updateSnack(id:string | number, snack:Snack):Observable<Snack>
   {
-    return this.http.put('http://localhost:3000/api/snacks/${id}',snack);
+    return this.http.put('http://localhost:3000/api/snacks/'+id,snack);
   }
 }

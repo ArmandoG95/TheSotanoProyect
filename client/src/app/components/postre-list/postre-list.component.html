@@ -1,7 +1,7 @@
 <h2>POSTRES</h2>
 <br>
 <div class="col-md-4" *ngFor="let postre of postres">
-    <div class="card text-center">
+    <div class="card border-dark text-center">
         <div class="card-header text-black d-felx justify-content-between align-items-center" style="background-color: beige; font-size: x-large; font-style: oblique;">
             {{postre.idPostre}}. {{postre.postre}}
             <a class="btn btn-light">Disponible</a>
@@ -10,8 +10,22 @@
         <div class="card-body">
             <p style="text-align: left;"><b>Precio: </b><i>${{postre.precioPostre}}</i></p>
             <p style="text-align: left;"><b>Descripción: </b><i>{{postre.descPostre}}</i></p>
-            <button type="button" class="btn btn-success">Editar</button>
-            <button type="button" class="btn btn-danger">Eliminar</button>
+            <button [routerLink]="['/postres/edit',postre.idPostre]" type="button" class="btn btn-success">Editar</button>
+            <button type="button" class="btn btn-danger" (click)="deletePostre(postre.idPostre)">Eliminar</button>
         </div>
     </div>
+</div>
+<div class="card text-center border-success mb-3" style="max-width: 18rem;">
+    <br>
+    <div class="card-header bg-transparent border-success"></div>
+    <div class="card-body text-success">
+        <br>
+      <h6 class="card-title">Nuevo Postre</h6>
+      <br>
+      <h5 class="card-title">Agrega un nuevo postre!</h5>
+      <br>
+      <a type="button" class="btn btn-outline-warning btn-lg" href="/postres/add">Agregar</a>
+    </div>
+    <div class="card-footer bg-transparent border-success"></div>
+    <br>
 </div>

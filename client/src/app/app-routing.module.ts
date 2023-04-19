@@ -23,6 +23,10 @@ const routes: Routes = [
   {
     path:'bebidas/add',
     component:BebidaFormComponent
+  },
+  {
+    path:'bebidas/edit/:id',
+    component:BebidaFormComponent
   }
   ,{
     path:'',
@@ -35,6 +39,10 @@ const routes: Routes = [
   },
   {
     path:'comidas/add',
+    component:ComidaFormComponent
+  },
+  {
+    path:'comidas/edit/:id',
     component:ComidaFormComponent
   }
   ,{
@@ -49,6 +57,10 @@ const routes: Routes = [
   {
     path:'postres/add',
     component:PostreFormComponent
+  },
+  {
+    path:'postres/edit/:id',
+    component:PostreFormComponent
   }
   ,{
     path:'',
@@ -61,6 +73,10 @@ const routes: Routes = [
   },
   {
     path:'snacks/add',
+    component:SnackFormComponent
+  },
+  {
+    path:'snacks/edit/:id',
     component:SnackFormComponent
   }
   ,{

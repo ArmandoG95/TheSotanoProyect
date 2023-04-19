@@ -1,7 +1,7 @@
 <h2>BEBIDAS</h2>
 <br>
 <div class="col-md-4" *ngFor="let bebida of bebidas">
-    <div class="card text-center">
+    <div class="card border-dark mb-3 text-center">
         <div class="card-header text-black d-felx justify-content-between align-items-center" style="background-color: beige; font-size: x-large; font-style: oblique;">
             {{bebida.idBebida}}. {{bebida.bebida}}
             <a class="btn btn-light">Disponible</a>
@@ -10,8 +10,22 @@
         <div class="card-body">
             <p style="text-align: left;"><b>Precio: </b><i>${{bebida.precioBebida}}</i></p>
             <p style="text-align: left;"><b>Descripción: </b><i>{{bebida.descBebida}}</i></p>
-            <button type="button" class="btn btn-success">Editar</button>
-            <button type="button" class="btn btn-danger">Eliminar</button>
+            <button [routerLink]="['/bebidas/edit',bebida.idBebida]" type="button" class="btn btn-success">Editar</button>
+            <button type="button" class="btn btn-danger" (click)="deleteBebida(bebida.idBebida)">Eliminar</button>
         </div>
     </div>
+</div>
+<div class="card text-center border-success mb-3" style="max-width: 18rem;">
+    <br>
+    <div class="card-header bg-transparent border-success"></div>
+    <div class="card-body text-success">
+        <br>
+      <h6 class="card-title">Nueva Bebida</h6>
+      <br>
+      <h5 class="card-title">Agrega una nueva bebida!</h5>
+      <br>
+      <a type="button" class="btn btn-outline-warning btn-lg" href="/bebidas/add">Agregar</a>
+    </div>
+    <div class="card-footer bg-transparent border-success"></div>
+    <br>
 </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Comida } from 'src/app/models/Comidas';
 import { ComidasService } from 'src/app/services/comidas.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-comida-form',
@@ -16,18 +17,46 @@ export class ComidaFormComponent implements OnInit {
     fotoComida:""
   };
 
-  constructor(private comidasService: ComidasService)
+  edit:boolean=false;
+
+  constructor(private comidasService: ComidasService, private router:Router, private activatedRoute:ActivatedRoute)
   {
   }
   ngOnInit(): void {
-    
+    const params=this.activatedRoute.snapshot.params;
+    if(params['id'])
+    {
+      this.comidasService.getComida(params['id']).subscribe(
+        res=>{
+          console.log(res);
+          this.comida=res;
+          this.edit=true;
+        },
+        err=>console.error(err)
+      );
+    }
   }
+
   saveNewComida(){
     delete this.comida.idComida;
 
     this.comidasService.saveComida(this.comida).subscribe(
-      res=>{console.log(res)},
+      res=>{
+        console.log(res);
+        this.router.navigate(['/comidas']);
+      },
       err=>console.error(err)
-    )
+    );
+  }
+
+  updateComida()
+  {
+    this.comidasService.updateComida(this.comida.idComida!,this.comida).subscribe(
+      res=>{
+        console.log(res);
+        this.router.navigate(['/comidas']);
+      },
+      err=>console.error(err)
+    );
   }
 }

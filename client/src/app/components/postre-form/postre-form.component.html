@@ -20,7 +20,7 @@
                     <input type="url" name="foto" [(ngModel)]="postre.fotoPostre" placeholder="Foto de Postre" class="form-controll" autofocus>
                 </div>
                 <br>
-                <button class="btn btn-outline-success" (click)="saveNewPostre()">Agregar</button>
+                <button class="btn btn-outline-success" (click)="edit?updatePostre():saveNewPostre()">Guardar</button>
             </form>
         </div>
     </div>

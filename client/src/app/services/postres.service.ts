@@ -15,7 +15,7 @@ export class PostresService {
   }
   getPostre(id:string)
   {
-    return this.http.get('http://localhost:3000/api/postres/${id}');
+    return this.http.get('http://localhost:3000/api/postres/'+id);
   }
   savePostre(postre:Postre)
   {
@@ -23,10 +23,10 @@ export class PostresService {
   }
   deletePostre(id:string)
   {
-    return this.http.delete('http://localhost:3000/api/postres/${id}');
+    return this.http.delete('http://localhost:3000/api/postres/'+id);
   }
-  updatePostre(id:string, postre:Postre):Observable<Postre>
+  updatePostre(id:string | number, postre:Postre):Observable<Postre>
   {
-    return this.http.put('http://localhost:3000/api/postres/${id}',postre);
+    return this.http.put('http://localhost:3000/api/postres/'+id,postre);
   }
 }

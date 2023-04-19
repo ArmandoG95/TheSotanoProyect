@@ -11,9 +11,24 @@ export class ComidaListComponent implements OnInit {
   comidas:any=[];
 
   constructor(private comidasService:ComidasService){}ngOnInit(): void {
-    {
-      this.comidasService.getComidas().subscribe(res => this.comidas=res,
+    this.getComidas();
+  }
+
+  getComidas()
+  {
+    this.comidasService.getComidas().subscribe(
+      res => this.comidas=res,
       err => console.error(err));
-    }
+  }
+
+  deleteComida(idComida:string)
+  {
+    this.comidasService.deleteComida(idComida).subscribe(
+      res=>{
+        console.log(res);
+        this.getComidas();
+      },
+      err=>console.error(err)
+    );
   }
 }
