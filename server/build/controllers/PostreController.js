@@ -37,7 +37,7 @@ class PostreController {
     update(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            yield database_1.default.query('UPDATE postres SET idPostre = ?', [req.body, id]);
+            yield database_1.default.query('UPDATE postres SET ? WHERE idPostre = ?', [req.body, id]);
             res.json({ Text: "Postre actualizada " + id });
         });
     }

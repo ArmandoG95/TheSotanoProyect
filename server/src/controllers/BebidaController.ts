@@ -25,7 +25,7 @@ class BebidaController
     public async update(req:Request, res:Response): Promise <void>
     {
         const {id} = req.params;
-        await pool.query('UPDATE bebidas SET idBebida = ?', [req.body, id])
+        await pool.query('UPDATE bebidas SET ? WHERE idBebida = ?', [req.body, id])
         res.json({Text: "Bebida actualizada "+id});
     }
 

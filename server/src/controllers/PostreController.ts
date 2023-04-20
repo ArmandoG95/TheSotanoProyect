@@ -25,7 +25,7 @@ class PostreController
     public async update(req:Request, res:Response): Promise <void>
     {
         const {id} = req.params;
-        await pool.query('UPDATE postres SET idPostre = ?', [req.body, id])
+        await pool.query('UPDATE postres SET ? WHERE idPostre = ?', [req.body, id])
         res.json({Text: "Postre actualizada "+id});
     }
 

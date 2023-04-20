@@ -37,7 +37,7 @@ class ComidaController {
     update(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            yield database_1.default.query('UPDATE comidas SET idComida = ?', [req.body, id]);
+            yield database_1.default.query('UPDATE comidas SET ? WHERE idComida = ?', [req.body, id]);
             res.json({ Text: "Comida actualizada " + id });
         });
     }
